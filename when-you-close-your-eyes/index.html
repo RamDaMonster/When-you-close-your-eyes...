@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A small keyboard horror game about escaping Briar House." />
+    <title>When You Close Your Eyes</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main class="game-shell">
+        <header class="game-header">
+            <div>
+                <p class="eyebrow">BRIAR HOUSE SLEEP CLINIC</p>
+                <h1>When You Close Your Eyes</h1>
+            </div>
+
+            <div class="anchor-counter" aria-label="Wake anchors collected">
+                <p>WAKE ANCHORS</p>
+                <strong id="anchor-count">0 / 3</strong>
+            </div>
+        </header>
+
+        <section class="message-panel" aria-live="polite">
+            <p class="panel-label" id="message-label">2:17 AM - NEW MESSAGE</p>
+            <p id="message-text">
+                "When you close your eyes, I can still move."
+            </p>
+        </section>
+
+        <section class="hud-grid" aria-label="Game information">
+            <div class="hud-panel">
+                <p class="panel-label">CURRENT OBJECTIVE</p>
+                <p id="objective-text">Find Theo's three wake anchors.</p>
+            </div>
+
+            <div class="hud-panel threat-panel">
+                <p class="panel-label">THE ATTENDANTS</p>
+                <p id="threat-text">Dormant.</p>
+            </div>
+        </section>
+
+        <section class="map-section" aria-label="Map of Briar House">
+            <div id="game-board" role="grid" aria-label="Briar House map"></div>
+        </section>
+
+        <footer class="game-footer">
+            <div>
+                <p id="status-text" aria-live="polite">
+                    Mara waits at the entrance.
+                </p>
+                <p>Steps taken: <span id="step-count">0</span></p>
+                <p id="room-name">Current room: Foyer</p>
+            </div>
+
+            <p class="controls">
+                Move: WASD or arrow keys<br />
+                Restart: R<br />
+                Sound: M </p>
+        </footer>
+    </main>
+
+    <section class="story-popup" id="story-popup" hidden aria-modal="true" role="dialog" aria-labelledby="story-title">
+        <div class="story-card">
+            <p class="story-kicker" id="story-kicker">THEO'S MEMORY</p>
+            <h2 id="story-title">A memory wakes up.</h2>
+            <p id="story-text"></p>
+            <button id="continue-button" type="button">Continue</button>
+        </div>
+    </section>
+
+    <script src="game.js"></script>
+</body>
+
+</html>
